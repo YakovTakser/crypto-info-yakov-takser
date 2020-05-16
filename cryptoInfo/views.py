@@ -14,7 +14,10 @@ class CryptoArticles(ListView):
     template_name = 'cryptoInfo/crypto.html'
 
     def get(self, request, *args, **kwargs):
-        """Get all Articles objects and show them to the user"""
+        """
+        Get all Articles objects and show them to the user
+        The user can filter the articles
+        """
         self.object_list = self.get_queryset()
         sort_form = SortForm
         crypto_filter = CryptoFilter(request.GET, queryset=self.object_list)
@@ -22,8 +25,7 @@ class CryptoArticles(ListView):
         return self.render_to_response(context)
 
     def get_ordering(self):
-        """Sort Articles by chosen field and
-         Filter Articles bu chosen fields"""
+        """Sort Articles by chosen field"""
         ordering = ""
         if self.request.GET.get('sort') != 'None':
             ordering = self.request.GET.get('sort')
