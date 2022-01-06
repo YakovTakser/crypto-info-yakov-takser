@@ -3,7 +3,7 @@ asgiref==3.2.7
 beautifulsoup4==4.9.0
 billiard==3.6.3.0
 cache==1.0.3
-celery==4.4.2
+celery==5.2.2
 certifi==2020.4.5.1
 cffi==1.14.0
 chardet==3.0.4
